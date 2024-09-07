@@ -23,5 +23,4 @@ Also working on Room DB and GoogleAuth integration.
 The completed project would be in the github branch:
 https://github.com/Narayan1089/VfAssignment.git
 
-Screenshot 2024-09-07 at 9.28.07 PM
 <img width="396" alt="Screenshot 2024-09-07 at 9 28 07 PM" src="https://github.com/user-attachments/assets/49a27fe3-2227-4521-8675-79a64023fad9">
