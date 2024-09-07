@@ -24,7 +24,7 @@ class LoginActivity : AppCompatActivity() {
 
         recyclerView = findViewById(R.id.recyclerView)
         recyclerView.layoutManager = GridLayoutManager(this, 3)
-        adapter = ImageAdapter(listOf()) // Initialize with empty list
+        adapter = ImageAdapter(listOf())
         recyclerView.adapter = adapter
 
         // Observe the LiveData from ViewModel
