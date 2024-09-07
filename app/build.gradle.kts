@@ -4,9 +4,14 @@ plugins {
     kotlin("kapt")
 }
 
+
 android {
     namespace = "com.example.vfassignment"
     compileSdk = 34
+
+    buildFeatures {
+        viewBinding = true
+    }
 
     defaultConfig {
         applicationId = "com.example.vfassignment"
@@ -83,5 +88,6 @@ dependencies {
     implementation(libs.glide)
     kapt(libs.compiler) // Use kapt for annotation processors in Kotlin
 
-
+    implementation(libs.play.services.auth)
 }
+

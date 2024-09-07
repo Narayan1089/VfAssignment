@@ -12,6 +12,8 @@ import com.example.vfassignment.domain.Model.ImageData
 class ImageAdapter(private var images: List<ImageData>) :
     RecyclerView.Adapter<ImageAdapter.ImageViewHolder>() {
 
+    private var shuffledImages = images
+
     class ImageViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val imageView: ImageView = view.findViewById(R.id.imageView)
     }
@@ -23,15 +25,20 @@ class ImageAdapter(private var images: List<ImageData>) :
     }
 
     override fun onBindViewHolder(holder: ImageViewHolder, position: Int) {
-        Glide.with(holder.itemView.context)
-            .load(images[position].imageUrl)
-            .into(holder.imageView)
+        if (shuffledImages.isNotEmpty()) {
+            val image = shuffledImages[position % shuffledImages.size]
+            Glide.with(holder.itemView.context)
+                .load(image.imageUrl)
+                .into(holder.imageView)
+        }
     }
 
-    override fun getItemCount(): Int = images.size
+    override fun getItemCount(): Int = Integer.MAX_VALUE // Simulate infinite scrolling
 
     fun updateImages(newImages: List<ImageData>) {
         images = newImages
+        shuffledImages = images.shuffled()
         notifyDataSetChanged()
     }
 }
+

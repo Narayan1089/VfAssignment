@@ -1,5 +1,6 @@
 package com.example.vfassignment.presentation.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -9,6 +10,7 @@ import com.example.vfassignment.network.RetrofitClient
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.util.logging.Logger
 
 class LoginViewModel : ViewModel() {
 
@@ -26,7 +28,7 @@ class LoginViewModel : ViewModel() {
             }
 
             override fun onFailure(call: Call<ImageResponse>, t: Throwable) {
-                // Handle failure
+               Log.e("Failed Call ","Failed to load : $t")
             }
         })
     }
